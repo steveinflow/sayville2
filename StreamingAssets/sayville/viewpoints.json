@@ -1,0 +1,114 @@
+[
+ {
+  "id": "vp01",
+  "title": "Main Street at Greene Avenue looking northeast toward Five Points",
+  "camera": {
+   "lat": 40.73432,
+   "lon": -73.0856,
+   "heightM": 1.7,
+   "headingDeg": 54,
+   "pitchDeg": 2,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "Downtown strip: two-storey commercial fronts both sides, street trees, parallel parking, Five Points signals at the far end.",
+  "confidence": "medium",
+  "validates": "Main Street corridor width, storefront ordering (west block)"
+ },
+ {
+  "id": "vp02",
+  "title": "Five Points looking southwest down Main Street",
+  "camera": {
+   "lat": 40.73612,
+   "lon": -73.08224,
+   "heightM": 1.7,
+   "headingDeg": 234,
+   "pitchDeg": 0,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "Five Points: Main St (both legs), Lakeland Ave to the LIRR station (NNW), Gillette Ave (S), Middle Road (E).",
+  "confidence": "medium",
+  "validates": "Five Points geometry, signals, downtown skyline"
+ },
+ {
+  "id": "vp03",
+  "title": "Mid-block Main Street, north side storefronts",
+  "camera": {
+   "lat": 40.73525,
+   "lon": -73.0838,
+   "heightM": 1.7,
+   "headingDeg": 324,
+   "pitchDeg": 4,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "From the south sidewalk at the origin looking across at the north-side shops (Madison's Niche, Lacrosse Unlimited, Starbucks block).",
+  "confidence": "medium",
+  "validates": "Storefront identities and bay rhythm"
+ },
+ {
+  "id": "vp04",
+  "title": "Sayville Theater from Main Street (Railroad Avenue / Lakeland Avenue)",
+  "camera": {
+   "lat": 40.736,
+   "lon": -73.08275,
+   "heightM": 1.7,
+   "headingDeg": 340,
+   "pitchDeg": 6,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "The 1912 Sayville Theater (103 Railroad Ave) sits one block north of Main Street.",
+  "confidence": "low",
+  "validates": "Theater massing and position"
+ },
+ {
+  "id": "vp05",
+  "title": "Aerial over downtown Sayville",
+  "camera": {
+   "lat": 40.735,
+   "lon": -73.0842,
+   "heightM": 110,
+   "headingDeg": 54,
+   "pitchDeg": -32,
+   "fovDegVertical": 55
+  },
+  "photo": null,
+  "notes": "Main Street diagonal through the village grid; avenues running due north\u2013south to the bay.",
+  "confidence": "medium",
+  "validates": "Street grid geometry and roof massing"
+ },
+ {
+  "id": "vp06",
+  "title": "Middle Road at the Congregational Church looking west to Five Points",
+  "camera": {
+   "lat": 40.7362,
+   "lon": -73.0799,
+   "heightM": 1.7,
+   "headingDeg": 262,
+   "pitchDeg": 2,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "Sayville Congregational Church (131 Middle Rd) and the library on the left.",
+  "confidence": "low",
+  "validates": "Middle Road approach"
+ },
+ {
+  "id": "vp_cherry",
+  "title": "Cherry Avenue Elementary School from Cherry Avenue",
+  "camera": {
+   "lat": 40.7385,
+   "lon": -73.0953,
+   "heightM": 1.7,
+   "headingDeg": 62,
+   "pitchDeg": 1,
+   "fovDegVertical": 60
+  },
+  "photo": null,
+  "notes": "West Sayville: the single-storey brick elementary school (Sayville UFSD) set back behind its field on the east side of Cherry Avenue.",
+  "confidence": "medium",
+  "validates": "west extension of the map (2026-09-04): Cherry Avenue and the school grounds"
+ }
+]

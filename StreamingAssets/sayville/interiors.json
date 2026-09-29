@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-09-04",
+  "notes": "Enterable rooms behind storefront bays. `match` picks the census tenant bay by name; `near` (local metres) places a new doorway on the nearest footprint edge when the building has no bay there. Kinds drive the fit-out in src/systems/Interiors.ts.",
+  "rooms": [
+    { "id": "starbucks", "osmId": "way/367473530", "match": "Starbucks", "kind": "cafe", "name": "Starbucks" },
+    { "id": "general_store", "osmId": "way/468113859", "match": "Sayville General Store", "kind": "shop", "name": "Sayville General Store" },
+    { "id": "bakery", "osmId": "way/468113859", "match": "French Bakery", "kind": "cafe", "name": "Fritzsche's French Bakery" },
+    { "id": "comics", "osmId": "way/340172080", "match": "Androids Amazing Comics", "kind": "shop", "name": "Androids Amazing Comics" },
+    { "id": "pizza", "osmId": "way/458333079", "match": "Sayville Pizza", "kind": "diner", "name": "Sayville Pizza" },
+    { "id": "station_pub", "osmId": "way/468215312", "match": "Station Pub", "kind": "diner", "name": "Station Pub" },
+    { "id": "theater", "osmId": "way/468113941", "match": "Sayville Theater", "kind": "theater", "name": "Sayville Theater" },
+    { "id": "library", "osmId": "way/468113497", "match": "Sayville Library", "kind": "library", "name": "Sayville Library" },
+    { "id": "sayville_fd", "osmId": "way/468113938", "match": "Sayville Fire Department", "kind": "firehouse", "name": "Sayville Fire Department" },
+    { "id": "west_fd", "osmId": "way/468178330", "near": [-1101, 55], "kind": "firehouse", "name": "West Sayville Fire Department" },
+    { "id": "cherry_school", "osmId": "way/468177352", "near": [-505, -906], "kind": "school", "name": "Cherry Avenue Elementary" }
+  ]
+}
