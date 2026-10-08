@@ -1,0 +1,314 @@
+{
+ "people_rig/men_beach_character": {
+  "file": "assets/models/people_rig/men_beach_character.glb",
+  "tris": 6574,
+  "sizeBytes": 436844,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   0.0534,
+   0.0219,
+   0.0072
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_business_man": {
+  "file": "assets/models/people_rig/men_business_man.glb",
+  "tris": 6634,
+  "sizeBytes": 439488,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   0.0534,
+   0.0219,
+   0.0072
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_casual_character": {
+  "file": "assets/models/people_rig/men_casual_character.glb",
+  "tris": 5776,
+  "sizeBytes": 423100,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   0.0534,
+   0.0219,
+   0.0072
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_farmer": {
+  "file": "assets/models/people_rig/men_farmer.glb",
+  "tris": 5476,
+  "sizeBytes": 423572,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   1,
+   1,
+   1
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_hoodie_character": {
+  "file": "assets/models/people_rig/men_hoodie_character.glb",
+  "tris": 6206,
+  "sizeBytes": 433800,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   0.0534,
+   0.0219,
+   0.0072
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_punk": {
+  "file": "assets/models/people_rig/men_punk.glb",
+  "tris": 5500,
+  "sizeBytes": 419384,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   1,
+   1,
+   1
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/men_worker": {
+  "file": "assets/models/people_rig/men_worker.glb",
+  "tris": 5240,
+  "sizeBytes": 415204,
+  "sex": "m",
+  "skin": [
+   0.4938,
+   0.3343,
+   0.1907
+  ],
+  "hair": [
+   1,
+   1,
+   1
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_adventurer": {
+  "file": "assets/models/people_rig/women_adventurer.glb",
+  "tris": 6808,
+  "sizeBytes": 456980,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   0.0482,
+   0.0343,
+   0.0222
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_animated_woman": {
+  "file": "assets/models/people_rig/women_animated_woman.glb",
+  "tris": 6108,
+  "sizeBytes": 439016,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   1,
+   1,
+   1
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_animated_woman_2": {
+  "file": "assets/models/people_rig/women_animated_woman_2.glb",
+  "tris": 6424,
+  "sizeBytes": 446900,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   0.0482,
+   0.0343,
+   0.0222
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_punk": {
+  "file": "assets/models/people_rig/women_punk.glb",
+  "tris": 5956,
+  "sizeBytes": 443452,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   0.0482,
+   0.0343,
+   0.0222
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_suit": {
+  "file": "assets/models/people_rig/women_suit.glb",
+  "tris": 6482,
+  "sizeBytes": 448984,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   0.0482,
+   0.0343,
+   0.0222
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ },
+ "people_rig/women_worker": {
+  "file": "assets/models/people_rig/women_worker.glb",
+  "tris": 6112,
+  "sizeBytes": 442200,
+  "sex": "f",
+  "skin": [
+   0.6172,
+   0.4179,
+   0.2384
+  ],
+  "hair": [
+   1,
+   1,
+   1
+  ],
+  "clips": [
+   "Idle",
+   "Idle_Neutral",
+   "Interact",
+   "Run",
+   "Walk",
+   "Wave"
+  ]
+ }
+}

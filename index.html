@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!-- The game is self-contained: it may load and fetch only from this site (and blobs / data it makes itself) - no other server, no LAN or
+     localhost address. Unity needs inline + blob scripts (the loader decompresses the framework into a blob) and WebAssembly compilation. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; worker-src 'self' blob:; connect-src 'self' blob: data:; img-src 'self' blob: data:; media-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Sayville Explorer 2</title>
+<meta name="description" content="Explore a digital twin of Sayville, NY in the browser: run, glide and grapple around town.">
+<link rel="icon" href="https://steveinflow.github.io/favicon.svg">
+<style>
+  :root { --bg: #0f1117; --card: #161b22; --line: #30363d; --text: #e6edf3; --dim: #8b949e; --link: #58a6ff; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); overflow: hidden;
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  #unity-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; background: var(--bg); outline: none; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box;
+    background: rgba(15, 17, 23, 0.92); transition: opacity .25s; }
+  #overlay.ready { background: rgba(15, 17, 23, 0.55); pointer-events: none; }
+  #overlay.hidden { opacity: 0; pointer-events: none; }
+  .panel { max-width: 560px; width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; box-sizing: border-box; }
+  h1 { margin: 0 0 4px; font-size: 26px; font-weight: 650; letter-spacing: -.01em; }
+  .sub { color: var(--dim); margin: 0 0 18px; }
+  .bar { height: 8px; background: #0d1117; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+  .bar > div { height: 100%; width: 0; background: var(--link); transition: width .2s; }
+  #status { color: var(--dim); font-size: 13px; margin: 8px 0 0; min-height: 20px; font-variant-numeric: tabular-nums; }
+  .keys { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 18px 0 0; font-size: 14px; }
+  .keys dt { text-align: right; white-space: nowrap; }
+  .keys dd { margin: 0; color: var(--dim); }
+  kbd { display: inline-block; min-width: 1.4em; padding: 0 5px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px;
+    background: #0d1117; font: 12px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; text-align: center; }
+  #go { display: none; margin: 18px 0 0; font-size: 18px; font-weight: 600; color: var(--link); text-align: center; }
+  #overlay.ready #go { display: block; }
+  #overlay.ready #progress { display: none; }
+  .note { color: var(--dim); font-size: 12px; margin: 16px 0 0; }
+  .note a { color: var(--link); text-decoration: none; }
+  #warn { display: none; margin: 14px 0 0; padding: 10px 12px; border: 1px solid #9e6a03; border-radius: 8px; background: #271d06; color: #e3b341; font-size: 13px; }
+  #warn button { margin-left: 8px; background: none; border: 1px solid #9e6a03; color: #e3b341; border-radius: 6px; padding: 2px 10px; cursor: pointer; font: inherit; }
+  #hint { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); padding: 4px 12px; border-radius: 6px; background: rgba(22, 27, 34, .85);
+    border: 1px solid var(--line); color: var(--dim); font-size: 12px; display: none; pointer-events: none; }
+  #fs { position: fixed; right: 12px; bottom: 12px; display: none; background: rgba(22, 27, 34, .85); border: 1px solid var(--line); color: var(--dim);
+    border-radius: 6px; padding: 4px 10px; font: 12px/1.5 inherit; cursor: pointer; }
+  @media (max-width: 480px) { .panel { padding: 18px; } h1 { font-size: 22px; } .keys { font-size: 13px; } }
+</style>
+</head>
+<body>
+<canvas id="unity-canvas" tabindex="-1"></canvas>
+<div id="overlay">
+  <div class="panel">
+    <h1>Sayville Explorer 2</h1>
+    <p class="sub">A digital twin of Sayville, NY. Run, double jump, glide and grapple your way around town.</p>
+    <div id="progress"><div class="bar"><div id="fill"></div></div><p id="status">Starting…</p></div>
+    <div id="warn"></div>
+    <dl class="keys">
+      <dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> + mouse</dt><dd>move and look</dd>
+      <dt><kbd>Shift</kbd></dt><dd>run</dd>
+      <dt><kbd>Space</kbd></dt><dd>jump, again to double jump, hold to glide</dd>
+      <dt><kbd>Q</kbd> / right mouse</dt><dd>grapple</dd>
+      <dt><kbd>E</kbd></dt><dd>interact, get in vehicles</dd>
+      <dt><kbd>V</kbd> · <kbd>Tab</kbd></dt><dd>camera · critters</dd>
+      <dt><kbd>R</kbd> · <kbd>T</kbd></dt><dd>rain · time of day</dd>
+      <dt><kbd>Esc</kbd></dt><dd>release the mouse</dd>
+      <dt>controller</dt><dd>PS5 / Xbox pads work: left stick move, right stick look, &#x2715; / A jump, R2 grapple, L2 run, &#x25B3; / Y interact, R1 glide</dd>
+    </dl>
+    <p id="go">Click anywhere, or press a controller button, to play</p>
+    <p class="note">About 190 MB on the first visit (cached after that). Best on a desktop browser with a dedicated GPU. <a href="https://steveinflow.github.io/projects/">← projects</a></p>
+  </div>
+</div>
+<div id="hint">Click to play · Esc releases the mouse</div>
+<button id="fs" title="Fullscreen">⛶ Fullscreen</button>
+<script>
+(function () {
+  var canvas = document.getElementById("unity-canvas"), overlay = document.getElementById("overlay"), fill = document.getElementById("fill"),
+      status = document.getElementById("status"), warn = document.getElementById("warn"), hint = document.getElementById("hint"), fs = document.getElementById("fs");
+  var buildUrl = "Build", started = false;
+  function mb(n) { return (n / 1048576).toFixed(0); }
+  function setProgress(f, text) { fill.style.width = Math.round(Math.max(0, Math.min(1, f)) * 100) + "%"; if (text) status.textContent = text; }
+  function fail(msg) { status.innerHTML = "<span style='color:#f85149'>" + msg + "</span>"; fill.style.background = "#f85149"; }
+
+  // The data file is split into parts under GitHub's 100 MB file limit (Build/parts.json, written by Tools/web/pack.ps1). The parts are
+  // kept in the Cache API keyed by the build's hash, so a second visit loads from disk; without parts.json the plain data file is used.
+  function fetchParts(onProgress) {
+    return fetch(buildUrl + "/parts.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (m) {
+      if (!m) return null;
+      var cacheName = "sayville2-" + m.hash, got = new Array(m.parts.length).fill(0), total = m.size;
+      function report() { var s = got.reduce(function (a, b) { return a + b; }, 0); onProgress(s / total, "Downloading town data " + mb(s) + " / " + mb(total) + " MB"); }
+      function one(cache, part, i) {
+        var url = buildUrl + "/" + part.name;
+        var hit = cache ? cache.match(url) : Promise.resolve(null);
+        return hit.then(function (res) {
+          if (res) return res.blob().then(function (b) { got[i] = b.size; report(); return b; });
+          return fetch(url).then(function (res) {
+            if (!res.ok) throw new Error(url + " " + res.status);
+            var reader = res.body.getReader(), chunks = [];
+            function pump() { return reader.read().then(function (x) { if (x.done) return; chunks.push(x.value); got[i] += x.value.length; report(); return pump(); }); }
+            return pump().then(function () {
+              var b = new Blob(chunks);
+              if (cache) cache.put(url, new Response(b)).catch(function () {});
+              return b;
+            });
+          });
+        });
+      }
+      var open = ("caches" in window) ? caches.keys().then(function (keys) {
+        keys.forEach(function (k) { if (k.indexOf("sayville2-") === 0 && k !== cacheName) caches.delete(k); });
+        return caches.open(cacheName);
+      }).catch(function () { return null; }) : Promise.resolve(null);
+      return open.then(function (cache) { return Promise.all(m.parts.map(function (p, i) { return one(cache, p, i); })); })
+        .then(function (blobs) { return URL.createObjectURL(new Blob(blobs)); });
+    });
+  }
+
+  function start() {
+    if (started) return; started = true; warn.style.display = "none";
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var config = {
+      arguments: [],
+      dataUrl: buildUrl + "/Web.data.unityweb",
+      frameworkUrl: buildUrl + "/Web.framework.js.unityweb",
+      codeUrl: buildUrl + "/Web.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      // a pointer-lock request refused for want of a user gesture is harmless (Unity asks on the next key, and Esc doesn't count): it went to Unity's
+      // error handler, which stopped the game behind an alert (2026-10-02: Esc as the first key froze the page)
+      errorHandler: function (err, url, line) { var s = String((err && (err.message || err)) || ""); if (/pointer ?lock/i.test(s)) { console.warn("pointer lock refused (no user gesture yet): " + s); return true; } return false; },
+      companyName: "steveinflow",
+      productName: "Sayville",
+      productVersion: "1.0",
+      devicePixelRatio: dpr,
+      // blob: URLs are new every visit; never let Unity's IndexedDB cache store them (the parts are cached above)
+      cacheControl: function (url) { return url.indexOf("blob:") === 0 ? "no-store" : "must-revalidate"; },
+      showBanner: function (msg, type) { if (type === "error") fail(msg); else console.warn(msg); }
+    };
+    fetchParts(function (f, t) { setProgress(f * 0.8, t); }).then(function (blobUrl) {
+      if (blobUrl) config.dataUrl = blobUrl;
+      var base = blobUrl ? 0.8 : 0;
+      var s = document.createElement("script");
+      s.src = buildUrl + "/Web.loader.js";
+      s.onerror = function () { fail("Could not load the game loader."); };
+      s.onload = function () {
+        createUnityInstance(canvas, config, function (p) {
+          setProgress(base + p * (1 - base), p < 0.9 ? (blobUrl ? "Starting the engine…" : "Downloading " + Math.round(p * 100) + "%") : "Building the town…");
+        }).then(function (instance) {
+          window.unityInstance = instance;
+          if (blobUrl) setTimeout(function () { URL.revokeObjectURL(blobUrl); }, 5000);
+          overlay.classList.add("ready"); fs.style.display = "block";
+          fs.onclick = function () { instance.SetFullscreen(1); };
+        }).catch(function (e) { fail(String(e && e.message || e)); });
+      };
+      document.body.appendChild(s);
+    }).catch(function (e) { fail("Download failed: " + (e && e.message || e)); });
+  }
+
+  // hide the panel once the game has the mouse; show a small hint while it doesn't
+  document.addEventListener("pointerlockchange", function () {
+    var locked = document.pointerLockElement === canvas;
+    if (locked) overlay.classList.add("hidden");
+    hint.style.display = (!locked && overlay.classList.contains("hidden")) ? "block" : "none";
+  });
+
+  // game controller: the game reads it itself (Input System, browser Gamepad API); here a button press only dismisses the start panel
+  // (a pad player never captures the mouse), and a pad showing up on a tablet answers the "keyboard and mouse" warning
+  var padStarted = false;
+  function padPoll() {
+    var pads = navigator.getGamepads ? navigator.getGamepads() : [], pressed = false;
+    for (var i = 0; i < pads.length; i++) { var g = pads[i]; if (g && g.connected) for (var b = 0; b < g.buttons.length; b++) if (g.buttons[b].pressed) pressed = true; }
+    if (pressed) {
+      if (!started) start();
+      else if (overlay.classList.contains("ready") && !overlay.classList.contains("hidden")) { overlay.classList.add("hidden"); canvas.focus(); padStarted = true; }
+    }
+    if (!padStarted) requestAnimationFrame(padPoll);
+  }
+  requestAnimationFrame(padPoll);
+
+  var gl = document.createElement("canvas").getContext("webgl2");
+  var mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  if (!gl) { fail("This browser has no WebGL 2, which the game needs. Try a current Chrome, Edge, Firefox or Safari."); return; }
+  if (mobile) {
+    warn.innerHTML = "This needs a keyboard and mouse or a game controller, and a lot of memory: on a tablet, connect a PS5 / Xbox controller and press a button, or <button id='anyway'>Try anyway</button>";
+    warn.style.display = "block"; setProgress(0, "Waiting…");
+    document.getElementById("anyway").onclick = start;
+  } else start();
+})();
+</script>
+</body>
+</html>

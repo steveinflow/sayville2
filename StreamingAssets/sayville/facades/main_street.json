@@ -1,0 +1,861 @@
+[
+  {
+    "osmId": "way/468113859",
+    "name": "Sayville General Store block (42–56 Main St)",
+    "notes": "Ref: refs/main_street/Sayville_General_Store_JPG.jpg — 2-storey red brick, corbelled brick cornice, white-trimmed 1/1 windows, black-and-gold fascia, two entrances flanking the sign, rounded corner (not modelled). Tenants from the OSM census.",
+    "wall": "brick_red",
+    "base": {
+      "material": "brick_red",
+      "height": 4.4
+    },
+    "groundH": 4.2,
+    "floorH": 3.5,
+    "floors": 1,
+    "heightM": 8.6,
+    "cornice": "medium",
+    "stringcourseAfterFloors": [
+      1
+    ],
+    "parapet": true,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 1,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.2,
+        "endPad": 0.9,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 3,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.2,
+        "endPad": 0.9,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 4,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.4,
+        "endPad": 1.0,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 0,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.6,
+        "endPad": 1.0,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 3,
+        "from": 0.8,
+        "to": 13.0,
+        "module": "storefront_bay_4.0x5.0",
+        "tenant": {
+          "name": "Sayville General Store",
+          "brand": "sayvillegeneral",
+          "signType": "fascia",
+          "category": "general store",
+          "status": "open",
+          "confidence": "high",
+          "address": "42-44 Main Street",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 1,
+        "from": 0.8,
+        "to": 11.9,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Fritzsche's French Bakery",
+          "signType": "fascia",
+          "category": "bakery",
+          "status": "open",
+          "confidence": "medium",
+          "address": "56 Main Street",
+          "bg": "#1b1b1b",
+          "color": "#f2d27a",
+          "awning": "black",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 4,
+        "from": 1.0,
+        "to": 9.0,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Sayville General Store",
+          "signType": "none",
+          "category": "general store",
+          "status": "open",
+          "confidence": "high",
+          "address": "42-44 Main Street",
+          "awning": "none"
+        }
+      }
+    ],
+    "extras": []
+  },
+  {
+    "osmId": "way/468113705",
+    "name": "Thornhill's block, 2 Main St",
+    "notes": "Ref: Thornhill_s_Rexall_Sayville_New_York_JPG.jpg — narrow 2-storey stucco (cream) with blue-grey trim, arched centre window flanked by two sash windows, bracketed cornice, full-width dark-blue fascia. Now Sayville N Spice (OSM census).",
+    "wall": "plaster_cream",
+    "base": {
+      "material": "plaster_cream",
+      "height": 4.0
+    },
+    "groundH": 3.9,
+    "floorH": 3.4,
+    "floors": 1,
+    "heightM": 8.4,
+    "cornice": "heavy",
+    "parapet": true,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 1,
+        "window": "win_dh_stone_1.2x2.2",
+        "windowFloor2": "win_arch_stone_1.5x3.0",
+        "bayW": 2.0,
+        "endPad": 0.6,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 0,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.6,
+        "endPad": 1.0,
+        "storefront": "wall"
+      },
+      {
+        "edge": 2,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.6,
+        "endPad": 1.0,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 1,
+        "from": 0.4,
+        "to": 5.6,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Sayville N Spice",
+          "signType": "fascia",
+          "category": "specialty food",
+          "status": "open",
+          "confidence": "medium",
+          "address": "2 Main Street",
+          "bg": "#1b2a6b",
+          "color": "#f6f1e6",
+          "awning": "none",
+          "illuminated": false
+        }
+      }
+    ]
+  },
+  {
+    "osmId": "way/468113700",
+    "name": "Chocolatier / Wine Boutique block (6–22 Main St, corner of Gillette)",
+    "notes": "Ref: Thornhill_s_Rexall photo (right half) — 2-storey red brick with cream bracketed cornice, tall 6/6 windows with cream surrounds, blue awning on the wine boutique, cream fascia with gold letters on the chocolatier. Tenants from the OSM census.",
+    "wall": "brick_red",
+    "base": {
+      "material": "brick_red",
+      "height": 4.3
+    },
+    "groundH": 4.1,
+    "floorH": 3.5,
+    "floors": 1,
+    "heightM": 8.5,
+    "cornice": "heavy",
+    "parapet": true,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 19,
+        "window": "win_dh_stone_1.5x2.6",
+        "bayW": 3.3,
+        "endPad": 0.8,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 0,
+        "window": "win_dh_stone_1.5x2.6",
+        "bayW": 3.2,
+        "endPad": 0.5,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 18,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.4,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 1,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.4,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 17,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.4,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 11,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.4,
+        "endPad": 0.8,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 0,
+        "from": 0.4,
+        "to": 6.5,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Down The Rabbit Hole",
+          "signType": "fascia",
+          "category": "wine & spirits",
+          "status": "open",
+          "confidence": "medium",
+          "address": "8 Main Street",
+          "bg": "#1f3f8f",
+          "color": "#ffffff",
+          "awning": "black",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 19,
+        "from": 23.6,
+        "to": 29.3,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Sayville Chocolatier",
+          "signType": "fascia",
+          "category": "specialty food",
+          "status": "open",
+          "confidence": "medium",
+          "address": "6 Main Street",
+          "bg": "#f0e6d0",
+          "color": "#7a5a1e",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 19,
+        "from": 17.4,
+        "to": 23.2,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "South Quarter",
+          "signType": "fascia",
+          "category": "apparel",
+          "status": "open",
+          "confidence": "medium",
+          "address": "14 Main Street",
+          "bg": "#1b1b1b",
+          "color": "#f2f2f2",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 19,
+        "from": 11.0,
+        "to": 17.0,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "The Catbird Seat",
+          "signType": "fascia",
+          "category": "gifts",
+          "status": "open",
+          "confidence": "medium",
+          "address": "18 Main Street",
+          "bg": "#2f4a3a",
+          "color": "#f2e6c8",
+          "awning": "green",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 19,
+        "from": 4.4,
+        "to": 10.6,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Rumpelstiltskin Yarns",
+          "signType": "fascia",
+          "category": "gifts",
+          "status": "open",
+          "confidence": "medium",
+          "address": "22 Main Street",
+          "bg": "#5a2224",
+          "color": "#f6e7c1",
+          "awning": "red",
+          "illuminated": false
+        }
+      }
+    ]
+  },
+  {
+    "osmId": "way/367473512",
+    "name": "Top Hat block (north side, mid-block)",
+    "notes": "Ref: Sayville_New_York_jpg.jpg — single-storey red brick shopfront row: Top Hat Barber under a red-and-white striped awning, gift shop under green, then the white clapboard Four Star with navy awnings. Tenants from the OSM census (order along the frontage assumed).",
+    "wall": "brick_red",
+    "base": {
+      "material": "brick_red",
+      "height": 4.6
+    },
+    "groundH": 4.4,
+    "floorH": 3.4,
+    "floors": 0,
+    "heightM": 5.3,
+    "cornice": "medium",
+    "parapet": true,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 5,
+        "window": "none",
+        "bayW": 3.4,
+        "endPad": 0.6,
+        "storefront": "storefront_bay_3.0x4.5"
+      },
+      {
+        "edge": 6,
+        "window": "none",
+        "bayW": 3.4,
+        "endPad": 0.4,
+        "storefront": "storefront_bay_3.0x4.5"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 5,
+        "from": 0.5,
+        "to": 5.0,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Madison's Niche",
+          "signType": "fascia",
+          "category": "apparel",
+          "status": "open",
+          "confidence": "medium",
+          "address": "Main Street",
+          "bg": "#243a55",
+          "color": "#f2f2f2",
+          "awning": "black",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 5,
+        "from": 5.2,
+        "to": 9.6,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Professional Physical Therapy",
+          "signType": "fascia",
+          "category": "medical",
+          "status": "open",
+          "confidence": "medium",
+          "address": "Main Street",
+          "bg": "#ffffff",
+          "color": "#1b4f8a",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 5,
+        "from": 9.8,
+        "to": 14.2,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Main Street Insurance",
+          "signType": "fascia",
+          "category": "insurance",
+          "status": "open",
+          "confidence": "medium",
+          "address": "91 Main Street",
+          "bg": "#1b1b1b",
+          "color": "#f2f2f2",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 5,
+        "from": 14.4,
+        "to": 18.8,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Signature Premiere Properties",
+          "signType": "fascia",
+          "category": "real estate",
+          "status": "open",
+          "confidence": "medium",
+          "address": "Main Street",
+          "bg": "#ffffff",
+          "color": "#1b1b1b",
+          "awning": "none",
+          "illuminated": false
+        }
+      },
+      {
+        "edge": 5,
+        "from": 19.0,
+        "to": 23.4,
+        "module": "storefront_bay_3.0x4.5",
+        "tenant": {
+          "name": "Top Hat Barber Shop",
+          "signType": "fascia",
+          "category": "salon",
+          "status": "open",
+          "confidence": "medium",
+          "address": "Main Street",
+          "bg": "#ffffff",
+          "color": "#c8102e",
+          "awning": "red",
+          "illuminated": false
+        }
+      }
+    ]
+  },
+  {
+    "osmId": "way/468113876",
+    "name": "Old Sayville Republican Club, 80 Main St",
+    "notes": "Ref: Sayville_Republican_Club_*_JPG.jpg — 2-storey white shingle/clapboard hall with a columned front porch, green shutters and a pedimented door surround.",
+    "wall": "paint_white",
+    "base": {
+      "material": "paint_white",
+      "height": 3.4
+    },
+    "groundH": 3.3,
+    "floorH": 3.0,
+    "floors": 1,
+    "heightM": 7.6,
+    "cornice": "medium",
+    "parapet": false,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 7,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 2.6,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 6,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.2,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 8,
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.2,
+        "endPad": 0.8,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 7,
+        "from": 3.8,
+        "to": 6.2,
+        "module": "storefront_door_double_2.0x2.8",
+        "tenant": {
+          "name": "80 Main Street · Hall Rental",
+          "signType": "blade",
+          "category": "social club",
+          "status": "open",
+          "confidence": "low",
+          "address": "80 Main Street",
+          "bg": "#f4f2ec",
+          "color": "#1d1d1f",
+          "awning": "none"
+        }
+      }
+    ],
+    "extras": [
+      {
+        "kind": "column_doric",
+        "edge": 7,
+        "at": 1.4
+      },
+      {
+        "kind": "column_doric",
+        "edge": 7,
+        "at": 3.6
+      },
+      {
+        "kind": "column_doric",
+        "edge": 7,
+        "at": 6.4
+      },
+      {
+        "kind": "column_doric",
+        "edge": 7,
+        "at": 8.6
+      },
+      {
+        "kind": "canopy_metal",
+        "edge": 7,
+        "at": 5.0
+      }
+    ]
+  },
+  {
+    "osmId": "way/468113894",
+    "name": "Sayville United Methodist Church (Main St at Greene Ave)",
+    "notes": "Ref: Sayville_United_Methodist_Church_JPG.jpg — Shingle-style church painted barn red with white trim, tall stained-glass windows, a square tower with a balustrade (tower not modelled). Square bell tower (mass) at the Main Street corner.",
+    "wall": "paint_red",
+    "base": {
+      "material": "paint_red",
+      "height": 1.2
+    },
+    "groundH": 5.0,
+    "floorH": 4.6,
+    "floors": 1,
+    "heightM": 10.5,
+    "cornice": "none",
+    "parapet": false,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 4,
+        "window": "win_arch_stone_1.5x3.0",
+        "bayW": 2.8,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 8,
+        "window": "win_arch_stone_1.5x3.0",
+        "bayW": 2.8,
+        "endPad": 0.8,
+        "storefront": "wall"
+      },
+      {
+        "edge": 1,
+        "window": "win_arch_stone_1.5x3.0",
+        "bayW": 3.0,
+        "endPad": 0.8,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 4,
+        "from": 4.6,
+        "to": 7.0,
+        "module": "storefront_door_double_2.0x2.8",
+        "tenant": {
+          "name": "Sayville United Methodist Church",
+          "signType": "none",
+          "category": "church",
+          "status": "open",
+          "confidence": "high",
+          "address": "164 Greene Avenue",
+          "awning": "none"
+        }
+      }
+    ],
+    "signs": [
+      {
+        "text": "SAYVILLE UNITED METHODIST CHURCH",
+        "edge": 8,
+        "at": 6.9,
+        "y": 3.2,
+        "widthM": 9.0,
+        "heightM": 0.55,
+        "color": "#f4f2ec",
+        "bg": null
+      }
+    ],
+    "masses": [
+      {
+        "polygon": [
+          [
+            -156,
+            26
+          ],
+          [
+            -149,
+            26
+          ],
+          [
+            -149,
+            33
+          ],
+          [
+            -156,
+            33
+          ]
+        ],
+        "height": 21,
+        "wall": "paint_red",
+        "cornice": "none",
+        "roof": "flat"
+      }
+    ]
+  },
+  {
+    "osmId": "way/468113885",
+    "name": "Sayville Congregational United Church of Christ (131 Middle Rd)",
+    "notes": "Ref: Sayville_Congregational_Church_Mar_10_jpg.jpg — white-painted shingle church with a tall shingled corner tower, arched stained-glass windows. Tall shingled corner tower (mass) on the Middle Road front.",
+    "wall": "paint_white",
+    "base": {
+      "material": "paint_white",
+      "height": 1.2
+    },
+    "groundH": 5.0,
+    "floorH": 4.6,
+    "floors": 1,
+    "heightM": 11.0,
+    "cornice": "none",
+    "parapet": false,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": "street",
+        "window": "win_arch_stone_1.5x3.0",
+        "bayW": 3.0,
+        "endPad": 0.8,
+        "storefront": "wall"
+      }
+    ],
+    "signs": [
+      {
+        "text": "SAYVILLE CONGREGATIONAL CHURCH · 1858",
+        "edge": 4,
+        "at": 4.9,
+        "y": 3.0,
+        "widthM": 8.5,
+        "heightM": 0.5,
+        "color": "#1b1b1b",
+        "bg": null
+      }
+    ],
+    "masses": [
+      {
+        "polygon": [
+          [
+            326.5,
+            79.5
+          ],
+          [
+            331.5,
+            84.5
+          ],
+          [
+            327.5,
+            88.5
+          ],
+          [
+            322.5,
+            83.5
+          ]
+        ],
+        "height": 23,
+        "wall": "paint_white",
+        "cornice": "none",
+        "roof": "flat"
+      }
+    ]
+  },
+  {
+    "osmId": "way/468113938",
+    "name": "Sayville Fire Department, 107 North Main St",
+    "notes": "Ref: Sayville_Fire_Department_Montauk_Highway_JPG.jpg — Georgian-revival red brick, 2 storeys, white 6/6 sash with black ground-floor shutters, pedimented centre bay with fanlight, white columned door surround, gold 'SAYVILLE FIRE DEPARTMENT' letters.",
+    "wall": "brick_red",
+    "base": {
+      "material": "brick_red",
+      "height": 3.6
+    },
+    "groundH": 3.6,
+    "floorH": 3.4,
+    "floors": 1,
+    "heightM": 9.4,
+    "cornice": "heavy",
+    "parapet": false,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": "all",
+        "window": "win_dh_stone_1.2x2.2",
+        "bayW": 3.0,
+        "endPad": 0.9,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 17,
+        "from": 2.0,
+        "to": 4.4,
+        "module": "storefront_door_double_2.0x2.8",
+        "tenant": {
+          "name": "Sayville Fire Department",
+          "signType": "none",
+          "category": "fire department",
+          "status": "open",
+          "confidence": "high",
+          "address": "107 North Main Street",
+          "awning": "none"
+        }
+      }
+    ],
+    "extras": [
+      {
+        "kind": "column_doric",
+        "edge": 17,
+        "at": 1.6
+      },
+      {
+        "kind": "column_doric",
+        "edge": 17,
+        "at": 4.8
+      }
+    ],
+    "signs": [
+      {
+        "text": "SAYVILLE FIRE DEPARTMENT",
+        "edge": 17,
+        "at": 3.15,
+        "y": 5.6,
+        "widthM": 5.8,
+        "heightM": 0.42,
+        "color": "#c9a24a",
+        "bg": null
+      }
+    ]
+  },
+  {
+    "osmId": "way/346293859",
+    "name": "The Suffolk County News, 23 Candee Ave",
+    "notes": "Ref: refs/main_street/Suffolk_County_News_Sayville_New_York_JPG.jpg — single-storey white stucco Greek-revival newspaper office: four Ionic columns under a dentilled pediment, 'THE SUFFOLK COUNTY NEWS' in black letters on the frieze, a six-light door between two wide shuttered windows. Edge 5 faces Candee Avenue.",
+    "wall": "plaster_white",
+    "base": {
+      "material": "plaster_white",
+      "height": 4.2
+    },
+    "groundH": 4.4,
+    "floorH": 3.2,
+    "floors": 0,
+    "heightM": 6.2,
+    "cornice": "heavy",
+    "stringcourseAfterFloors": [],
+    "parapet": false,
+    "rooftop": [
+      "none"
+    ],
+    "edges": [
+      {
+        "edge": 5,
+        "window": "none",
+        "bayW": 3.0,
+        "endPad": 0.5,
+        "storefront": "wall"
+      },
+      {
+        "edge": "street",
+        "window": "none",
+        "bayW": 3.0,
+        "endPad": 0.8,
+        "storefront": "wall"
+      }
+    ],
+    "storefronts": [
+      {
+        "edge": 5,
+        "from": 3.1,
+        "to": 5.5,
+        "module": "storefront_door_double_2.0x2.8",
+        "tenant": {
+          "name": "The Suffolk County News",
+          "signType": "none",
+          "category": "newspaper",
+          "status": "open",
+          "confidence": "high",
+          "address": "23 Candee Avenue",
+          "awning": "none",
+          "illuminated": false
+        }
+      }
+    ],
+    "extras": [
+      {
+        "kind": "column_doric",
+        "edge": 5,
+        "at": 0.9
+      },
+      {
+        "kind": "column_doric",
+        "edge": 5,
+        "at": 2.9
+      },
+      {
+        "kind": "column_doric",
+        "edge": 5,
+        "at": 5.7
+      },
+      {
+        "kind": "column_doric",
+        "edge": 5,
+        "at": 7.7
+      }
+    ],
+    "signs": [
+      {
+        "text": "THE SUFFOLK COUNTY NEWS.",
+        "edge": 5,
+        "at": 4.3,
+        "y": 4.75,
+        "widthM": 7.6,
+        "heightM": 0.55,
+        "color": "#1a1a1a",
+        "bg": null,
+        "letterSpacing": 0.18
+      }
+    ]
+  }
+]
